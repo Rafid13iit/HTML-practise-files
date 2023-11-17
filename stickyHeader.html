@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px 0;
+      color: white;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    section {
+      margin-top: 60px; /* Adjust this margin to match the height of your header */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sticky Header Example</h1>
+  </header>
+
+  <section>
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+    <!-- Add more content here -->
+  </section>
+
+  <script>
+    window.onscroll = function() { stickyHeader() };
+
+    var header = document.querySelector("header");
+    var sticky = header.offsetTop;
+
+    function stickyHeader() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+</html>
